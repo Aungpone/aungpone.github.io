@@ -8,7 +8,7 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - newpage.qmd
       - text: "More"
         menu:
           - talks.qmd
