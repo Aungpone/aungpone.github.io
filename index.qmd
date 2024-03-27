@@ -11,3 +11,28 @@ Reference [https://www.bmj.com/about-bmj/resources-readers/publications/epidemio
 
 ကပ်ရောဂါဗေဒဟု ခေါ်ဆိုသော်လည်း ကပ်ရောဂါများအကြောင်းကိုသာ လေ့လာခြင်းမဟုတ်ဘဲ မတူညီသောလူအုပ်စုများတွင် မည်သို့ရောဂါများဖြစ်ပွားကြသည်ဆိုသည်နှင့် မည်သည့်အတွက်ကြောင့် ထိုသို့ဖြစ်ရသည်ကို လေ့လာခြင်းဖြစ်သည်။
 
+```{r}
+#| echo: false
+owid <- read.csv("https://covid.ourworldindata.org/data/owid-covid-data.csv")
+owidMM <- owid[owid$location=="Myanmar",]
+owidMM$date <- as.Date(owidMM$date, format = "%Y-%m-%d")
+owidMM <- owidMM[c(4,5,6,8,9,17,26,27,32,33,42,43,48)]
+owidMM$wave <- ""
+owidMM$wave[owidMM$date<"2020-08-01"] <- "First"
+owidMM$wave[owidMM$date>="2020-08-01"& owidMM$date<"2021-03-01"] <-"Second"
+owidMM$wave[owidMM$date>="2021-03-01"& owidMM$date<"2022-01-01"] <- "Third"
+owidMM$wave[owidMM$date>="2022-01-01"& owidMM$date<"2022-07-01"] <- "Fourth"
+owidMM$wave[owidMM$date>="2022-07-01"& owidMM$date<"2023-01-01"] <- "Fifth"
+owidMM$wave[owidMM$date>="2023-01-01"] <- "Sixth"
+owidMM$wave[owidMM$date>="2024-01-01"] <- "Seventh"
+owidMM$wave <- factor(owidMM$wave, levels = c("First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh"))
+
+library(ggplot2)
+ggplot(owidMM,aes(x=date))+
+  geom_col(aes(y=new_cases), fill="red")+
+  scale_x_date(breaks = "1 month",date_labels = "%b/%y", name = "Date")+
+  theme_bw()+
+  theme(axis.text.x = element_text(angle = 90), legend.position = "bottom")+
+  facet_wrap(~wave, scales = "free")+
+  labs(title = "Weekly COVID-19 cases in Myanmar")
+```
