@@ -1,6 +1,6 @@
 ---
-title: "New page"
+title: "Epidemiology of COVID-19 in Myanmar"
 ---
-It is to create a new page.
+There have been many waves of infection occured in Myanmar.
 
 ![Myanmar COVID-19 waves](waves.png)

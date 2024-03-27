@@ -4,7 +4,12 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this site"
+    "text": "He who writes.",
+    "crumbs": [
+      "Home",
+      "Others",
+      "About"
+    ]
   },
   {
     "objectID": "mysite.html",
@@ -49,13 +54,13 @@
   {
     "objectID": "newpage.html",
     "href": "newpage.html",
-    "title": "New page",
+    "title": "Epidemiology of COVID-19 in Myanmar",
     "section": "",
-    "text": "It is to create a new page.\n\n\n\nMyanmar COVID-19 waves",
+    "text": "There have been many waves of infection occured in Myanmar.\n\n\n\nMyanmar COVID-19 waves",
     "crumbs": [
       "Home",
       "New",
-      "New page"
+      "Epidemiology of COVID-19 in Myanmar"
     ]
   }
 ]

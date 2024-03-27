@@ -1,5 +1,9 @@
 ---
 title: "About"
+about: 
+    template: trestles
+    image: Designer.png
 ---
 
-About this site
+
+He who writes.
