@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "My super duper website"
+  title: "Epidemiology"
   navbar:
     left:
       - href: index.qmd
